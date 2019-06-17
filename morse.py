@@ -1,5 +1,5 @@
 letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ.,?"!'
-cadena = "hola mundo".upper()  #para las mayusculas
+posicion= 0
 morse = {
     'A':'·—', 
     'B':'—···', 
@@ -43,11 +43,13 @@ morse = {
     '?': '··——··',
     '"': '·—··—·',
     '!': '——··——'}
-posicion= 0
-for letra in cadena:
-    
+def toMorse(texto):
+    texto = texto.upper()  #para las mayusculas
+    resultado = ""
+    for letra in texto:
         if letra in morse:
-            print("{}: {}".format, (letra, morse[letra])) 
-    else:
-        
-        print(" ")
+            resultado+= morse [letra]
+            resultado+=" "
+        else:
+            resultado += " "
+    return resultado
