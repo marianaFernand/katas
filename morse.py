@@ -1,5 +1,4 @@
-letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ.,?"!'
-posicion= 0
+
 morse = {
     'A':'·—', 
     'B':'—···', 
@@ -43,6 +42,9 @@ morse = {
     '?': '··——··',
     '"': '·—··—·',
     '!': '——··——'}
+
+
+
 def toMorse(texto):
     texto = texto.upper()  #para las mayusculas
     resultado = ""
@@ -53,3 +55,24 @@ def toMorse(texto):
         else:
             resultado += " "
     return resultado
+
+def toPlain(codigo):
+    codigo = codigo.split(" ")
+    reversoAR =reverso()
+    resultado= ""
+   
+    for simbolo in codigo:
+        if simbolo in reversoAR:
+            resultado+= reversoAR[simbolo]
+            resultado+=""
+        else:
+            resultado+=" "
+    return resultado
+
+def reverso ():
+    texto = {}
+    for key in morse: 
+        valor = morse[key]
+        texto[valor] = key
+    return texto
+
